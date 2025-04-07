@@ -1,0 +1,2 @@
+# SistemPakar
+UJIAN TENGAN SEMESTER 
