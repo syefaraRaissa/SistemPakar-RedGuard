@@ -57,6 +57,37 @@ penyakit_list = {
 
 # =================== HALAMAN DIAGNOSA ===================
 if halaman == "Diagnosa Penyakit":
+    st.markdown("<h1 style='color:Tomato;'>🌶️ Diagnosa Penyakit Tanaman Cabai</h1>", unsafe_allow_html=True)
+    st.markdown("#### Metode: <span style='color:green;'>Forward Chaining</span>", unsafe_allow_html=True)
+    st.image("cabai.jpg", caption="Tanaman Cabai Sehat", use_container_width=True)
+
+    st.markdown("### ✅ Pilih gejala yang terlihat:")
+    gejala_terpilih = []
+
+    with st.form("form_gejala"):
+        for kode, nama in gejala_list.items():
+            if st.checkbox(nama, key=kode):
+                gejala_terpilih.append(kode)
+        submitted = st.form_submit_button("🔍 Diagnosa Sekarang")
+
+    if submitted:
+        st.markdown("## 🩺 Hasil Diagnosa")
+        ditemukan = False
+        for penyakit, data in penyakit_list.items():
+            gejala_penyakit = data["gejala"]
+            cocok = [g for g in gejala_penyakit if g in gejala_terpilih]
+
+            if set(gejala_penyakit).issubset(set(gejala_terpilih)):
+                akurasi = round((len(cocok) / len(gejala_penyakit)) * 100, 2)
+                st.success(f"🌱 Penyakit: *{penyakit}*")
+                st.markdown(f"*🧪 Solusi:* {data['solusi']}")
+                st.markdown(f"*📊 Akurasi Diagnosa:* {akurasi}%")
+                ditemukan = True
+
+        if not ditemukan:
+            st.warning("⚠️ Tidak ditemukan penyakit yang cocok dengan gejala yang Anda pilih.")
+            st.info("💡 Coba cek kembali gejala atau konsultasikan ke ahli pertanian.")
+            
     st.markdown("## 🌶️ Diagnosa Penyakit Tanaman Cabai")
     st.write("Jawab 'Ya' atau 'Tidak' untuk gejala berikut:")
 
