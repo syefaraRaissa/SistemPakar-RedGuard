@@ -114,7 +114,6 @@ elif halaman == "Informasi Penyakit & Tips":
 # =================== HALAMAN PROFIL KELOMPOK ===================
 elif halaman == "Profil Kelompok":
     st.markdown("## 👨‍👩‍👧‍👦 Profil Kelompok")
-    st.image("kelompok.jpg", caption="Kelompok Tani Cabai Sejahtera", use_container_width=True)
     st.write("""
     **Kelompok Tani Cabai Sejahtera** adalah kelompok mahasiswa yang berfokus pada pengembangan sistem pakar berbasis AI 
     untuk membantu petani mengenali dan mengatasi penyakit tanaman cabai. Kami percaya bahwa teknologi dapat membantu 
