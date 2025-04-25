@@ -66,7 +66,7 @@ if halaman == "Diagnosa Penyakit":
 
     with st.form("form_gejala"):
         for kode, nama in gejala_list.items():
-            if st.checkbox(nama, key=kode):
+            if st.checkbox(nama, key="cb_" + kode):
                 gejala_terpilih.append(kode)
         submitted = st.form_submit_button("🔍 Diagnosa Sekarang")
 
@@ -94,7 +94,7 @@ if halaman == "Diagnosa Penyakit":
     gejala_terpilih = []
     with st.form("form_diagnosa"):
         for kode, deskripsi in gejala_list.items():
-            if st.radio(deskripsi, ("Tidak", "Ya"), key=kode) == "Ya":
+            if st.radio(deskripsi, ("Tidak", "Ya"), key="radio_" + kode) == "Ya":
                 gejala_terpilih.append(kode)
         submit = st.form_submit_button("🔍 Diagnosa Sekarang")
 
