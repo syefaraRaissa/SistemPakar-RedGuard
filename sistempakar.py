@@ -125,7 +125,7 @@ if halaman == "Diagnosa Penyakit":
             st.markdown(f"**💡 Solusi:** {penyakit_list[nama_penyakit]['solusi']}")
             st.markdown(f"**📊 Akurasi Diagnosa:** {akurasi*100:.2f}%")
             try:
-                st.image(penyakit_list[nama_penyakit]["gambar"], width=500)
+                st.img(penyakit_list[nama_penyakit]["gambar"], width=500)
             except:
                 st.warning("Gambar tidak ditemukan.")
 
