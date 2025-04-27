@@ -14,7 +14,7 @@ st.markdown("""
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 20%;
+        width: 50%;
         height: auto;
     }
     .card {
@@ -93,7 +93,7 @@ penyakit_list = {
 if halaman == "Diagnosa Penyakit":
     st.markdown("<h1 style='color:Red;'>🌶️ Diagnosa Penyakit Tanaman Cabai</h1>", unsafe_allow_html=True)
     st.markdown("#### Metode: <span style='color:green;'>Forward Chaining</span>", unsafe_allow_html=True)
-    st.image("cabai.jpg", caption="Tanaman Cabai Sehat", use_container_width=True)
+    st.image("cabai.jpg", caption="Tanaman Cabai Sehat", width=500)
 
     st.markdown("### ✅ Jawab pertanyaan berikut:")
 
@@ -120,7 +120,7 @@ if halaman == "Diagnosa Penyakit":
             st.markdown(f"**💡 Solusi:** {penyakit_list[nama_penyakit]['solusi']}")
             st.markdown(f"**📊 Akurasi Diagnosa:** {akurasi*100:.2f}%")
             try:
-                st.image(penyakit_list[nama_penyakit]["gambar"], use_container_width=True)
+                st.image(penyakit_list[nama_penyakit]["gambar"], width=500)
             except:
                 st.warning("Gambar tidak ditemukan.")
 
@@ -141,7 +141,7 @@ elif halaman == "Informasi Penyakit & Tips":
     for nama, data in penyakit_list.items():
         st.markdown(f'<div class="card"><h3>{nama}</h3><p>{data["informasi"]}</p><p><strong>💡 Solusi:</strong> {data["solusi"]}</p>', unsafe_allow_html=True)
         try:
-            st.image(data["gambar"], use_container_width=True)
+            st.image(data["gambar"], width=500)
         except:
             st.warning("Gambar tidak tersedia.")
         st.markdown("</div>", unsafe_allow_html=True)
