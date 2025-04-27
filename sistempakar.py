@@ -14,7 +14,7 @@ st.markdown("""
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
+        width: 50%;
         height: auto;
     }
     .card {
@@ -83,8 +83,8 @@ penyakit_list = {
     },
     "Busuk Akar (Fusarium)": {
         "gejala": ["G2", "G11"],
-        "solusi": "Busuk Akar (Fusarium) adalah penyakit tanaman yang disebabkan oleh jamur Fusarium spp., yang menyerang sistem perakaran dan menyebabkan kerusakan serius pada banyak jenis tanaman, termasuk sayuran, tanaman buah, dan tanaman hias. Penyakit ini ditandai dengan gejala akar yang membusuk, berubah warna menjadi menguning hingga kehitaman, serta tanaman yang tampak layu meskipun kondisi tanah cukup lembab. Infeksi Fusarium juga dapat menyebabkan pertumbuhan tanaman terhambat, daun menguning, dan akhirnya kematian tanaman. Penyakit ini berkembang pesat di tanah yang lembab, kurang drainase, serta pada kondisi lingkungan yang panas. Untuk mengendalikan Busuk Akar Fusarium, perlu dilakukan sanitasi lahan, penggunaan benih sehat, rotasi tanaman, serta aplikasi fungisida sistemik sesuai anjuran. Menjaga kebersihan area tanam dan memperbaiki sistem drainase juga sangat penting untuk mencegah penyebaran penyakit ini.",
-        "informasi": "Busuk akar (Fusarium)...",
+        "solusi": "Gunakan fungisida sistemik dan rotasi tanaman.",
+        "informasi": "Busuk Akar (Fusarium) adalah penyakit tanaman yang disebabkan oleh jamur Fusarium spp., yang menyerang sistem perakaran dan menyebabkan kerusakan serius pada banyak jenis tanaman, termasuk sayuran, tanaman buah, dan tanaman hias. Penyakit ini ditandai dengan gejala akar yang membusuk, berubah warna menjadi cokelat hingga kehitaman, serta tanaman yang tampak layu meskipun kondisi tanah cukup lembab. Infeksi Fusarium juga dapat menyebabkan pertumbuhan tanaman terhambat, daun menguning, dan akhirnya kematian tanaman. Penyakit ini berkembang pesat di tanah yang lembab, kurang drainase, serta pada kondisi lingkungan yang panas. Untuk mengendalikan Busuk Akar Fusarium, perlu dilakukan sanitasi lahan, penggunaan benih sehat, rotasi tanaman, serta aplikasi fungisida sistemik sesuai anjuran. Menjaga kebersihan area tanam dan memperbaiki sistem drainase juga sangat penting untuk mencegah penyebaran penyakit ini.",
         "gambar": "busuk_akar.jpg"
     }
 }
