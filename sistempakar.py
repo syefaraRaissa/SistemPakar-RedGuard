@@ -10,7 +10,7 @@ halaman = st.sidebar.selectbox("📌 Menu", ["Diagnosa Penyakit", "Informasi Pen
 # CSS untuk mempercantik tampilan dan card layout
 st.markdown("""
     <style>
-    img {
+    image {
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -125,7 +125,7 @@ if halaman == "Diagnosa Penyakit":
             st.markdown(f"**💡 Solusi:** {penyakit_list[nama_penyakit]['solusi']}")
             st.markdown(f"**📊 Akurasi Diagnosa:** {akurasi*100:.2f}%")
             try:
-                st.img(penyakit_list[nama_penyakit]["gambar"], width=500)
+                st.image(penyakit_list[nama_penyakit]["gambar"], width=500)
             except:
                 st.warning("Gambar tidak ditemukan.")
 
