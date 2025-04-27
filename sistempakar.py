@@ -7,49 +7,62 @@ st.set_page_config(page_title="Sistem Pakar Cabai", layout="wide")
 # Navigasi halaman
 halaman = st.sidebar.selectbox("📌 Menu", ["Diagnosa Penyakit", "Informasi Penyakit & Tips", "Profil Kelompok"])
 
+# CSS agar gambar center
+st.markdown("""
+    <style>
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: auto;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # Data gejala dan penyakit
 gejala_list = {
-    "G1": "Daun keriting",
-    "G2": "Daun menguning",
-    "G3": "Pertumbuhan lambat",
-    "G4": "Daun berlubang",
-    "G5": "Terdapat ulat pada tanaman",
-    "G6": "Daun gugur",
-    "G7": "Buah busuk",
-    "G8": "Batang layu",
-    "G9": "Terdapat bintik pada daun",
-    "G10": "Daun mengering",
-    "G11": "Akar membusuk",
+    "G1": "Apakah daun tanaman cabai terlihat keriting?",
+    "G2": "Apakah daun tanaman cabai menguning?",
+    "G3": "Apakah pertumbuhan tanaman cabai lambat?",
+    "G4": "Apakah daun tanaman cabai terlihat berlubang?",
+    "G5": "Apakah terdapat ulat pada tanaman cabai?",
+    "G6": "Apakah daun pada tanaman cabai sering gugur?",
+    "G7": "Apakah buah dari tanaman cabai sering busuk?",
+    "G8": "Apakah batang tanaman cabai layu?",
+    "G9": "Apakah terdapat bintik pada daun?",
+    "G10": "Apakah daun tanaman cabai mengering?",
+    "G11": "Apakah akar tanaman cabai membusuk"?,
 }
 
 penyakit_list = {
     "Serangan Kutu Daun (Aphids)": {
         "gejala": ["G1", "G2", "G3"],
         "solusi": "Semprot tanaman dengan insektisida berbahan aktif imidakloprid.",
-        "informasi": "Serangan kutu daun (Aphids)...",
+        "informasi": "Serangan Kutu Daun (Aphids) adalah salah satu masalah serius yang menyerang berbagai jenis tanaman, terutama tanaman hortikultura. Kutu daun merupakan serangga kecil yang hidup berkelompok di bagian bawah daun, batang muda, atau tunas tanaman. Serangannya ditandai dengan gejala seperti daun menggulung, menguning, pertumbuhan tanaman terhambat, hingga munculnya embun madu yang lengket di permukaan tanaman, yang kemudian bisa mengundang pertumbuhan jamur hitam (sooty mold). Aphids merusak tanaman dengan cara menghisap cairan sel tanaman sehingga mengurangi vitalitas tanaman. Selain itu, kutu daun juga dapat menjadi vektor penyebaran berbagai penyakit virus tanaman. Untuk mengendalikan serangan kutu daun, disarankan melakukan penyemprotan insektisida berbahan aktif imidakloprid secara teratur, serta menjaga kebersihan lingkungan sekitar tanaman agar tidak menjadi tempat berkembang biaknya hama ini.",
         "gambar": "kutu-daun.jpg"
     },
     "Serangan Ulat Grayak (Spodoptera litura)": {
         "gejala": ["G4", "G5"],
         "solusi": "Gunakan insektisida nabati atau Bacillus thuringiensis.",
-        "informasi": "Serangan ulat grayak (Spodoptera litura)...",
+        "informasi": "Serangan Ulat Grayak (Spodoptera litura) adalah salah satu serangan hama yang paling merusak pada berbagai jenis tanaman budidaya, terutama sayuran dan tanaman hortikultura. Ulat grayak menyerang dengan cara memakan daun, batang muda, dan kadang-kadang buah tanaman, sehingga menyebabkan daun berlubang, rusak, bahkan rontok. Serangan ini biasanya dimulai dengan gejala seperti daun berlubang tidak beraturan dan kerusakan berat pada pucuk tanaman. Ulat grayak aktif terutama di malam hari, sementara pada siang hari mereka bersembunyi di tanah atau di bawah daun. Jika tidak dikendalikan, populasi ulat bisa meningkat dengan cepat dan menyebabkan kerugian besar.",
         "gambar": "Ulat_Grayak.jpg"
     },
     "Busuk Batang (Phytophthora capsici)": {
         "gejala": ["G6", "G7", "G8"],
         "solusi": "Gunakan fungisida sistemik dan hindari genangan air.",
-        "informasi": "Busuk batang (Phytophthora capsici)...",
+        "informasi": "Busuk Batang (Phytophthora capsici) adalah penyakit tanaman yang disebabkan oleh jamur patogen dan sering menyerang tanaman seperti cabai, terung, tomat, dan beberapa tanaman hortikultura lainnya. Penyakit ini ditandai dengan munculnya bercak cokelat kehitaman pada batang dekat permukaan tanah, yang lama-kelamaan membusuk dan melemahkan struktur tanaman. Daun tanaman yang terserang biasanya akan layu mendadak, meskipun tanah masih tampak basah, dan jika infeksi parah, tanaman bisa mati seluruhnya. Phytophthora capsici berkembang cepat di kondisi lembab dan basah, sehingga sering muncul setelah hujan deras atau sistem pengairan yang buruk. Untuk mengendalikan penyakit ini, penting melakukan sanitasi lahan, menggunakan varietas tahan penyakit, memperbaiki sistem drainase, serta melakukan aplikasi fungisida berbahan aktif sesuai anjuran untuk mencegah penyebaran lebih lanjut.",
         "gambar": "busuk_batang.jpg"
     },
     "Penyakit Bercak Daun (Cercospora)": {
         "gejala": ["G9", "G2", "G10"],
         "solusi": "Semprotkan fungisida mankozeb atau klorotalonil.",
-        "informasi": "Penyakit bercak daun (Cercospora)...",
+        "informasi": "Penyakit Bercak Daun (Cercospora) adalah salah satu penyakit tanaman yang disebabkan oleh jamur dari genus Cercospora, dan menyerang berbagai jenis tanaman, termasuk sayuran dan tanaman hortikultura. Gejala serangan ini ditandai dengan munculnya bercak-bercak kecil berwarna cokelat hingga abu-abu pada permukaan daun, yang lama-kelamaan membesar dan dapat menyebabkan daun menguning, kering, dan rontok. Penyakit ini biasanya berkembang cepat di lingkungan yang lembab dan hangat. Jika tidak segera dikendalikan, infeksi bercak daun dapat menghambat fotosintesis, memperlambat pertumbuhan tanaman, dan menurunkan hasil panen secara signifikan. Pengendalian penyakit ini dapat dilakukan dengan menjaga sirkulasi udara di sekitar tanaman, menghindari penyiraman dari atas yang memperlama kelembaban daun, serta menggunakan fungisida berbahan aktif sesuai anjuran untuk menghentikan penyebarannya.",
         "gambar": "bercak_daun.jpg"
     },
     "Busuk Akar (Fusarium)": {
         "gejala": ["G2", "G11"],
-        "solusi": "Gunakan fungisida sistemik dan rotasi tanaman.",
+        "solusi": "Busuk Akar (Fusarium) adalah penyakit tanaman yang disebabkan oleh jamur Fusarium spp., yang menyerang sistem perakaran dan menyebabkan kerusakan serius pada banyak jenis tanaman, termasuk sayuran, tanaman buah, dan tanaman hias. Penyakit ini ditandai dengan gejala akar yang membusuk, berubah warna menjadi menguning hingga kehitaman, serta tanaman yang tampak layu meskipun kondisi tanah cukup lembab. Infeksi Fusarium juga dapat menyebabkan pertumbuhan tanaman terhambat, daun menguning, dan akhirnya kematian tanaman. Penyakit ini berkembang pesat di tanah yang lembab, kurang drainase, serta pada kondisi lingkungan yang panas. Untuk mengendalikan Busuk Akar Fusarium, perlu dilakukan sanitasi lahan, penggunaan benih sehat, rotasi tanaman, serta aplikasi fungisida sistemik sesuai anjuran. Menjaga kebersihan area tanam dan memperbaiki sistem drainase juga sangat penting untuk mencegah penyebaran penyakit ini.",
         "informasi": "Busuk akar (Fusarium)...",
         "gambar": "busuk_akar.jpg"
     }
@@ -57,44 +70,17 @@ penyakit_list = {
 
 # =================== HALAMAN DIAGNOSA ===================
 if halaman == "Diagnosa Penyakit":
-    st.markdown("<h1 style='color:Tomato;'>🌶️ Diagnosa Penyakit Tanaman Cabai</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='color:Red;'>🌶️ Diagnosa Penyakit Tanaman Cabai</h1>", unsafe_allow_html=True)
     st.markdown("#### Metode: <span style='color:green;'>Forward Chaining</span>", unsafe_allow_html=True)
     st.image("cabai.jpg", caption="Tanaman Cabai Sehat", use_container_width=True)
 
-    st.markdown("### ✅ Pilih gejala yang terlihat:")
-    gejala_terpilih = []
-
-    with st.form("form_gejala"):
-        for kode, nama in gejala_list.items():
-            if st.checkbox(nama, key="cb_" + kode):
-                gejala_terpilih.append(kode)
-        submitted = st.form_submit_button("🔍 Diagnosa Sekarang")
-
-    if submitted:
-        st.markdown("## 🩺 Hasil Diagnosa")
-        ditemukan = False
-        for penyakit, data in penyakit_list.items():
-            gejala_penyakit = data["gejala"]
-            cocok = [g for g in gejala_penyakit if g in gejala_terpilih]
-
-            if set(gejala_penyakit).issubset(set(gejala_terpilih)):
-                akurasi = round((len(cocok) / len(gejala_penyakit)) * 100, 2)
-                st.success(f"🌱 Penyakit: *{penyakit}*")
-                st.markdown(f"*🧪 Solusi:* {data['solusi']}")
-                st.markdown(f"*📊 Akurasi Diagnosa:* {akurasi}%")
-                ditemukan = True
-
-        if not ditemukan:
-            st.warning("⚠️ Tidak ditemukan penyakit yang cocok dengan gejala yang Anda pilih.")
-            st.info("💡 Coba cek kembali gejala atau konsultasikan ke ahli pertanian.")
-            
-    st.markdown("## 🌶️ Diagnosa Penyakit Tanaman Cabai")
-    st.write("Jawab 'Ya' atau 'Tidak' untuk gejala berikut:")
+    st.markdown("### ✅ Jawab pertanyaan berikut:")
 
     gejala_terpilih = []
     with st.form("form_diagnosa"):
-        for kode, deskripsi in gejala_list.items():
-            if st.radio(deskripsi, ("Tidak", "Ya"), key="radio_" + kode) == "Ya":
+        for kode, pertanyaan in gejala_list.items():
+            jawaban = st.radio(pertanyaan, ("Tidak", "Ya"), key="radio_" + kode)
+            if jawaban == "Ya":
                 gejala_terpilih.append(kode)
         submit = st.form_submit_button("🔍 Diagnosa Sekarang")
 
@@ -117,14 +103,13 @@ if halaman == "Diagnosa Penyakit":
             except:
                 st.warning("Gambar tidak ditemukan.")
 
-            # Penyakit lainnya (kemungkinan)
+            # Kemungkinan penyakit lain
             st.markdown("### 🔍 Kemungkinan Penyakit Lain:")
             for penyakit, data in penyakit_list.items():
                 cocok = [g for g in data["gejala"] if g in gejala_terpilih]
                 prob = len(cocok) / len(data["gejala"])
                 if 0 < prob < 1.0:
                     st.info(f"📌 {penyakit} → Probabilitas: {prob*100:.2f}%")
-
         else:
             st.warning("❌ Tidak ditemukan penyakit yang sesuai.")
             st.info("💡 Silakan periksa kembali gejala atau konsultasikan ke ahli.")
@@ -151,11 +136,7 @@ elif halaman == "Profil Kelompok":
     meningkatkan produktivitas pertanian.
 
     **Anggota:**
-    - Raissa Ramadhan (UI/UX & Front-End)
-    - Dani Pratama (Back-End & Machine Learning)
-    - Intan Permata (Database & Dokumentasi)
-    - Budi Santoso (Manajemen & Integrasi)
-    """)
+    - Syefara Raissa Ramadhan (UI/UX & Front-End)
 
     st.markdown("📍 Lokasi: Universitas Lampung, Fakultas Teknik - Teknik Informatika")
 
