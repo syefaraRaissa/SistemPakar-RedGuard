@@ -161,8 +161,6 @@ elif halaman == "Profil Kelompok":
     - Syefara Raissa Ramadhan   221506012
     - Dita Ayu Cahaya Apria     2215061014
     - Muhammad Haikal Batubara	2255061010
-
-    
     """)
-     st.markdown("🌶️KELOMPOK REDGUARD🌶️,📍 Lokasi: Universitas Lampung, Fakultas Teknik - Teknik Informatika")
 
+    st.markdown("🌶️KELOMPOK REDGUARD🌶️,📍 Lokasi: Universitas Lampung, Fakultas Teknik - Teknik Informatika")
