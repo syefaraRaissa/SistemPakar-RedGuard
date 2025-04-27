@@ -98,7 +98,7 @@ penyakit_list = {
 if halaman == "Diagnosa Penyakit":
     st.markdown("<h1 style='color:Red;'>🌶️ Diagnosa Penyakit Tanaman Cabai</h1>", unsafe_allow_html=True)
     st.markdown("#### Metode: <span style='color:green;'>Forward Chaining</span>", unsafe_allow_html=True)
-    st.image("cabai.jpg", caption="Tanaman Cabai Sehat", width=500)
+    st.image("cabai.jpg", caption="Tanaman Cabai Sehat", width=500, margin-left: auto, margin-right: auto)
 
     st.markdown("### ✅ Jawab pertanyaan berikut:")
 
