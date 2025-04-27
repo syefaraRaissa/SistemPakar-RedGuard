@@ -35,8 +35,13 @@ st.markdown("""
         font-size: 14px;
         color: #555;
     }
-    .card img {
+   .card img {
         border-radius: 10px;
+        width: 100%;  # Membuat gambar mengisi lebar card
+        height: auto;  # Menjaga proporsi gambar
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     </style>
 """, unsafe_allow_html=True)
