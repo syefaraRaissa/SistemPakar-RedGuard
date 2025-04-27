@@ -7,7 +7,7 @@ st.set_page_config(page_title="Sistem Pakar Cabai", layout="wide")
 # Navigasi halaman
 halaman = st.sidebar.selectbox("📌 Menu", ["Diagnosa Penyakit", "Informasi Penyakit & Tips", "Profil Kelompok"])
 
-# CSS agar gambar center
+# CSS untuk mempercantik tampilan dan card layout
 st.markdown("""
     <style>
     img {
@@ -16,6 +16,27 @@ st.markdown("""
         margin-right: auto;
         width: 80%;
         height: auto;
+    }
+    .card {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .card:hover {
+        background-color: #e2f2e2;
+    }
+    .card h3 {
+        color: #007a33;
+    }
+    .card p {
+        font-size: 14px;
+        color: #555;
+    }
+    .card img {
+        border-radius: 10px;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -32,7 +53,7 @@ gejala_list = {
     "G8": "Apakah batang tanaman cabai layu?",
     "G9": "Apakah terdapat bintik pada daun?",
     "G10": "Apakah daun tanaman cabai mengering?",
-    "G11": "Apakah akar tanaman cabai membusuk"?,
+    "G11": "Apakah akar tanaman cabai membusuk?"
 }
 
 penyakit_list = {
@@ -118,14 +139,12 @@ if halaman == "Diagnosa Penyakit":
 elif halaman == "Informasi Penyakit & Tips":
     st.markdown("## 📚 Informasi Penyakit & Tips Merawat Tanaman Cabai")
     for nama, data in penyakit_list.items():
-        st.markdown(f"### 🔎 {nama}")
-        st.write(data["informasi"])
-        st.markdown(f"**💡 Solusi:** {data['solusi']}")
+        st.markdown(f'<div class="card"><h3>{nama}</h3><p>{data["informasi"]}</p><p><strong>💡 Solusi:</strong> {data["solusi"]}</p>', unsafe_allow_html=True)
         try:
             st.image(data["gambar"], use_container_width=True)
         except:
             st.warning("Gambar tidak tersedia.")
-        st.markdown("---")
+        st.markdown("</div>", unsafe_allow_html=True)
 
 # =================== HALAMAN PROFIL KELOMPOK ===================
 elif halaman == "Profil Kelompok":
@@ -137,6 +156,7 @@ elif halaman == "Profil Kelompok":
 
     **Anggota:**
     - Syefara Raissa Ramadhan (UI/UX & Front-End)
-""")
+    
     st.markdown("📍 Lokasi: Universitas Lampung, Fakultas Teknik - Teknik Informatika")
+    """)
 
