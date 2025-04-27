@@ -155,13 +155,14 @@ elif halaman == "Informasi Penyakit & Tips":
 elif halaman == "Profil Kelompok":
     st.markdown("## 👨‍👩‍👧‍👦 Profil Kelompok")
     st.write("""
-    **Kelompok Tani Cabai Sejahtera** adalah kelompok mahasiswa yang berfokus pada pengembangan sistem pakar berbasis AI 
-    untuk membantu petani mengenali dan mengatasi penyakit tanaman cabai. Kami percaya bahwa teknologi dapat membantu 
-    meningkatkan produktivitas pertanian.
+    **Kelompok Redguard adalah kelompok mahasiswa yang berfokus pada pengembangan teknologi dan solusi berbasis AI untuk mendukung keberlanjutan dan peningkatan kualitas hidup masyarakat. Kami berkomitmen untuk menciptakan inovasi yang dapat memperbaiki berbagai sektor kehidupan, mulai dari pertanian hingga kesehatan, dengan pendekatan yang ramah lingkungan dan berorientasi pada masa depan. Kami percaya bahwa teknologi adalah kunci untuk menghadapi tantangan global yang semakin kompleks.
 
     **Anggota:**
-    - Syefara Raissa Ramadhan (UI/UX & Front-End)
+    - Syefara Raissa Ramadhan   221506012
+    - Dita Ayu Cahaya Apria     2215061014
+    - Muhammad Haikal Batubara	2255061010
+
     
-    st.markdown("📍 Lokasi: Universitas Lampung, Fakultas Teknik - Teknik Informatika")
     """)
+     st.markdown("🌶️KELOMPOK REDGUARD🌶️,📍 Lokasi: Universitas Lampung, Fakultas Teknik - Teknik Informatika")
 
