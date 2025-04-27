@@ -137,6 +137,6 @@ elif halaman == "Profil Kelompok":
 
     **Anggota:**
     - Syefara Raissa Ramadhan (UI/UX & Front-End)
-
+""")
     st.markdown("📍 Lokasi: Universitas Lampung, Fakultas Teknik - Teknik Informatika")
 
