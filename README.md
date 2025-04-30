@@ -25,5 +25,5 @@ Program Studi: Teknik Informatika, Universitas Lampung
 Pengembang:
 1. Syefara Raissa Ramadhan    2215061012 
 2. Dita Ayu Cahaya Apria      2215061014 
-3. Muhammad Haikal Batubara    2255061010
+
  
